@@ -1,5 +1,5 @@
-const express = require('expres');
-const hbs = require('expres-handlebars').create({
+const express = require('express');
+const hbs = require('express-handlebars').create({
     extname: '.hbs'
 });
 
