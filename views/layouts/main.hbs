@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
     <title>{{title}}</title>
 </head>
 <body>
-    {{{body}}}
+     <nav class="main-nav nav-right">
+                <ul class="nav">
+                    <li><a class="navBar" href="/catalog">Catalog </a></li>
+                    <li><a class="navBar" href="/">Home </a></li>
+                    <li><a class="navBar" href="/create">Create </a></li>
+                    <li><a class="navBar" href="/about">About </a></li>
+                
+                </ul>
+            </nav>
+    <div class="layout">
+        <header>
+           
+        </header>
+
+        <main>
+            {{{body}}}
+        </main> 
+    </div>
+    <footer>Petar Kostadinov &copy; 2022</footer>
 </body>
 </html>
