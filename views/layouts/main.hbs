@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/style.css">
     <title>{{title}}</title>
+    <link rel="stylesheet" href="/static/site.css">
 </head>
+
 <body>
-     <nav class="main-nav nav-right">
-                <ul class="nav">
-                    <li><a class="navBar" href="/catalog">Catalog </a></li>
-                    <li><a class="navBar" href="/">Home </a></li>
-                    <li><a class="navBar" href="/create">Create </a></li>
-                    <li><a class="navBar" href="/about">About </a></li>
-                
+    <div id="page-content">
+        <header>
+            <a href="/" class="title-logo">
+                <img src="/static/assets/logo.png">
+                <span>SoftUni Sleepover</span>
+            </a>
+            {{#if hasUser}}
+            <span>Welcome, {{username}}</span>
+            {{/if}}
+            <nav class="main-nav nav-mid">
+                <ul>
+                    <li>
+                        <a href="/catalog">Browse Accomodation</a>
+                    </li>
+                    {{!-- {{#if hasUser}} --}}
+                    <li>
+                        <a href="/create">Host</a>
+                    </li>
+                    <li>
+                        <a href="/facility/create">Create Facility</a>
+                    </li>
+                    <li>
+                        <a href="/auth/logout">Logout</a>
+                    </li>
+                    {{!-- {{else}} --}}
+                    <li>
+                        <a href="/auth/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/auth/register">Register</a>
+                    </li>
+                    {{!-- {{/if}} --}}
                 </ul>
             </nav>
-    <div class="layout">
-        <header>
-           
         </header>
 
         <main>
             {{{body}}}
-        </main> 
+        </main>
+
+        <footer>Petar Kostadinov &copy; 2022</footer>
     </div>
-    <footer>Petar Kostadinov &copy; 2022</footer>
 </body>
+
 </html>
