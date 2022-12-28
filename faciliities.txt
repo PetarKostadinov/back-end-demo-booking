@@ -1,0 +1,14 @@
+kitchen
+private bathroom
+air conditioning
+desk
+bathtub
+terrace
+balcony
+TV
+washing machine
+kettle
+coffe machineparking
+restuaran
+pet-friendly
+WiFi
