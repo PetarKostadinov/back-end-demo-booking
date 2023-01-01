@@ -10,14 +10,15 @@ function getById(id) {
 }
 
 
-async function create(roomData) {
+async function create(roomData, ownerId) {
     const room = {
         name: roomData.name,
         description: roomData.description,
         city: roomData.city,
         beds: Number(roomData.beds),
         price: Number(roomData.price),
-        imgUrl: roomData.imgUrl
+        imgUrl: roomData.imgUrl,
+        owner: ownerId
 
     };
 

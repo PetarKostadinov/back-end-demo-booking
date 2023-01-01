@@ -7,7 +7,7 @@
         <form class="layout left large" method="post" action="/create">
             {{#if error}}
             <div class="error-box">
-                {{#each error.messages}}
+                {{#each error}}
                 <p>{{this}}</p>
                 {{/each}}
             </div>

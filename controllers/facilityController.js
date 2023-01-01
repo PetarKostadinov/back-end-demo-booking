@@ -13,7 +13,7 @@ facilityController.get('/create', async(req, res) => {
 });
 
 facilityController.post('/create', async(req, res) => {
-    console.log(req.body);
+   
 
     try {
         await createFacility(req.body.label, req.body.iconUrl);
@@ -44,7 +44,7 @@ facilityController.get('/:roomId/decorateRoom', async (req, res) => {
 })
 
 facilityController.post('/:roomId/decorateRoom', async (req, res) => {
-    console.log(req.body);
+   
     await addFacilities(req.params.roomId, Object.keys(req.body));
     res.redirect('/facility/' + req.params.roomId + '/decorateRoom');
 });
