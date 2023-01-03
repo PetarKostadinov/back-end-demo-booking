@@ -8,14 +8,16 @@
                 {{#if error}}
                 <div class="error-box">
                     {{#each error}}
-                    <p>{{this}}</p>
+                    <p>{{msg}}</p>
                     {{/each}}
                 </div>
                 {{/if}}
                 <div class="aligned">
-                    <label><span>Username</span><input type="text" name="username"></label>
-                    <label><span>Pssword</span><input type="password" name="password"></label>
-                    <label><span>Repeat Password</span><input type="password" name="repass"></label>
+                 
+                    <label><span>Username</span><input {{#if fields.username}}class="field-error"{{/if}} type="text" name="username" value="{{body.username}}"></label>
+                    <label><span>Pssword</span><input {{#if fields.password}}class="field-error"{{/if}} type="password" name="password"></label>
+                    <label><span>Repeat Password</span><input {{#if fields.repass}}class="field-error"{{/if}} type="password" name="repass"></label>
+                   
                 </div>
                 <input class="cta action" type="submit" value="Sign Up">
             </form>
