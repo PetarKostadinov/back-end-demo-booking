@@ -3,6 +3,7 @@ const facilityController = require('express').Router();
 const { body, validationResult } = require('express-validator');
 const { createFacility, getAllFacilities, addFacilities } = require('../services/facilityService');
 const { getById } = require('../services/roomService');
+const { parseError } = require('../utils/parser');
 
 
 facilityController.get('/create', async (req, res) => {
@@ -29,7 +30,9 @@ facilityController.post('/create',
         } catch (error) {
             //...
             res.render('createFacility', {
-                title: 'Create New Facility'
+                title: 'Create New Facility',
+                error: parseError(error),
+                body:req.body
             });
         }
     })

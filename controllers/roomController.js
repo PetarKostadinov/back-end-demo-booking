@@ -1,5 +1,6 @@
 
 const { getById, update, deleteById } = require('../services/roomService');
+const { parseError } = require('../utils/parser');
 
 const roomController = require('express').Router();
 
@@ -63,11 +64,11 @@ roomController.post('/:id/delete', async (req, res) => {
     try {
         const result = await deleteById(roomId);
         res.redirect('/catalog');
-    } catch (err) {
+    } catch (error) {
         req.body._id = roomId;
         res.render('delete', {
             title: 'Delete Accomodation',
-            error: err.message.split('\n'),
+            error: parseError(error),
             room: req.body
         })
     }
