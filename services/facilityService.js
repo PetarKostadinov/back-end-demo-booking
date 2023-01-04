@@ -40,7 +40,6 @@ async function addFacilities(roomId, facilityIds) {
     await room.save();
     await Promise.all(toRemove.map(f => f.save()));
     await Promise.all(newlyAdded.map(f => f.save()));
-
 }
 
 module.exports = {

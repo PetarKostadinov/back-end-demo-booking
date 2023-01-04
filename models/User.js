@@ -4,9 +4,8 @@ const roleSchema = new Schema({
     value: { type: String, enum: ['user', 'admin'] }
 })
 
-
 const userSchema = new Schema({
-    username: { type: String, minlength: [3, 'Username must be at least 3 characters long' ]},
+    username: { type: String, minlength: [3, 'Username must be at least 3 characters long'] },
     hashedPassword: { type: String, required: true },
     roles: { type: [roleSchema], default: ['user'] }
 });

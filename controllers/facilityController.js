@@ -22,7 +22,7 @@ facilityController.post('/create',
         const { errors } = validationResult(req);
         try {
 
-            if(errors.length > 0) {
+            if (errors.length > 0) {
                 throw errors;
             }
             await createFacility(req.body.label, req.body.iconUrl);
@@ -32,7 +32,7 @@ facilityController.post('/create',
             res.render('createFacility', {
                 title: 'Create New Facility',
                 error: parseError(error),
-                body:req.body
+                body: req.body
             });
         }
     })
@@ -70,4 +70,5 @@ facilityController.post('/:roomId/decorateRoom', async (req, res) => {
     await addFacilities(req.params.roomId, Object.keys(req.body));
     res.redirect('/facility/' + req.params.roomId + '/decorateRoom');
 });
+
 module.exports = facilityController;

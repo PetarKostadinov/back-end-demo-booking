@@ -13,11 +13,14 @@
                 </div>
                 {{/if}}
                 <div class="aligned">
-                 
-                    <label><span>Username</span><input {{#if error.fields.username}}class="field-error"{{/if}} type="text" name="username" value="{{body.username}}"></label>
-                    <label><span>Pssword</span><input {{#if error.fields.password}}class="field-error"{{/if}} type="password" name="password"></label>
-                    <label><span>Repeat Password</span><input {{#if error.fields.repass}}class="field-error"{{/if}} type="password" name="repass"></label>
-                   
+
+                    <label><span>Username</span><input {{#if error.fields.username}}class="field-error" {{/if}}
+                            type="text" name="username" value="{{body.username}}"></label>
+                    <label><span>Pssword</span><input {{#if error.fields.password}}class="field-error" {{/if}}
+                            type="password" name="password"></label>
+                    <label><span>Repeat Password</span><input {{#if error.fields.repass}}class="field-error" {{/if}}
+                            type="password" name="repass"></label>
+
                 </div>
                 <input class="cta action" type="submit" value="Sign Up">
             </form>

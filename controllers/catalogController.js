@@ -3,7 +3,7 @@ const { getAll, getById } = require('../services/roomService');
 
 const router = require('express').Router();
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
 
     const user = req.user;
 
@@ -24,20 +24,20 @@ router.get('/', async(req, res) => {
     });
 });
 
-router.get('/:id', async(req, res) => {
+router.get('/:id', async (req, res) => {
     const roomId = req.params.id;
     const room = await getById(roomId);
 
-    if(req.user && req.user._id == room.owner){
+    if (req.user && req.user._id == room.owner) {
         room.isOwner = true;
     }
-    if(room){
+    if (room) {
 
         res.render('details', {
             title: 'Accomodation Details',
             room
         });
-    }else{
+    } else {
         res.render('roomNotFound', {
             title: 'Accomodation Details',
             roomId

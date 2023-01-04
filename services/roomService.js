@@ -17,7 +17,6 @@ async function create(roomData, ownerId) {
         price: Number(roomData.price),
         imgUrl: roomData.imgUrl,
         owner: ownerId
-
     };
 
     const missing = Object.entries(room).filter(([k, v]) => !v);
@@ -53,7 +52,7 @@ async function update(roomId, roomData) {
     return room;
 }
 
-async function deleteById(roomId){
+async function deleteById(roomId) {
 
     return Room.findByIdAndRemove(roomId);
 }

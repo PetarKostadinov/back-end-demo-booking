@@ -5,7 +5,7 @@ const createController = require('../controllers/createController');
 const defaultController = require('../controllers/defaultController');
 const facilityController = require('../controllers/facilityController');
 const authController = require('../controllers/authController');
-const { hasUser, isGuest} = require('../middlewares/guards');
+const { hasUser, isGuest } = require('../middlewares/guards');
 const roomController = require('../controllers/roomController');
 
 module.exports = (app) => {
@@ -17,6 +17,4 @@ module.exports = (app) => {
     app.use('/room', roomController);
 
     app.all('*', defaultController);
-    
 }
- 

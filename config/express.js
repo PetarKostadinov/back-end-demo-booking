@@ -3,7 +3,7 @@ const express = require('express');
 const hbs = require('express-handlebars').create({
     extname: '.hbs'
 });
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 const defaultTitle = require('../middlewares/defaultTitle');
 const auth = require('../middlewares/auth');
 const userNav = require('../middlewares/userNav');
@@ -19,7 +19,6 @@ module.exports = (app) => {
     app.use(cookieParser());
     app.use(auth(jwtSecret));
     app.use(userNav());
-    
 
-    app.use(defaultTitle('booking'))
+    app.use(defaultTitle('booking'));
 }

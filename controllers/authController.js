@@ -9,7 +9,6 @@ authController.get('/login', (req, res) => {
 
     res.render('login', {
         title: 'Login'
-
     })
 });
 
@@ -28,7 +27,7 @@ authController.post('/login',
                     username: req.body.username
                 },
                 error: parseError(error)
-               
+
             });
         }
     });
